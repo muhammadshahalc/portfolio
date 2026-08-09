@@ -54,6 +54,10 @@ export default function Hero() {
     <section className="hero section" id="home">
       <div className="container hero-content">
         <div className="hero-text">
+          <div className="status-badge fade-up active">
+            <span className="status-dot"></span>
+            <span className="status-text">AVAILABLE FOR OPPORTUNITIES</span>
+          </div>
           <h1 className="hero-title fade-up active">
             <span>Hi, I'm</span> <br />
             <span className="typed-text">{typedText}</span>

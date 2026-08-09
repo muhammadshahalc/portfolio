@@ -9,7 +9,6 @@ import Footer from "./components/Footer";
 import ScrollTop from "./components/ScrollTop";
 import ScrollProgress from "./components/ScrollProgress";
 import CustomCursor from "./components/CustomCursor";
-import { testimonials } from "./data/content";
 
 function App() {
   return (
@@ -22,11 +21,6 @@ function App() {
       <Experience />
       <Services />
       <Portfolio />
-      {testimonials.length > 0 && (
-        // Testimonials section intentionally omitted until you have real ones —
-        // see data/content.js for notes on why.
-        null
-      )}
       <Contact />
       <Footer />
       <ScrollTop />

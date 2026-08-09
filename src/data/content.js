@@ -7,11 +7,12 @@ export const personal = {
   name: "Muhammad Shahal",
   logoFirst: "Shahal",         // logo text, first part (styled plain)
   logoSecond: ".ai",           // logo text, second part (styled with accent color)
-  roles: [                     // rotates in the typed-text hero effect
+  roles: [
+    "Muhammad Shahal",
     "Full-Stack AI/ML Engineer",
+    "Data Scientist",
     "GenAI & LLM Systems Developer",
     "Agentic AI & RAG Specialist",
-    "Backend & MLOps Engineer",
   ],
   heroSubtitle:
     "Full-stack AI/ML Engineer specializing in production-grade GenAI, LLM applications, RAG pipelines, and multi-agent systems. I build reliable, scalable end-to-end AI software — from vector architecture to cloud deployment.",
@@ -34,19 +35,31 @@ export const about = {
   yearsLabel: "AI/ML",       // shown in the "experience badge" circle
   yearsSubLabel: "Engineer",
   skills: [
+    // GenAI / LLM
     "Python",
+    "SQL",
     "LangGraph",
     "LangChain",
     "RAG & Hybrid Search",
     "Agentic AI",
+    "Prompt Engineering",
+
+    // Backend & Frontend
     "FastAPI & Flask",
     "React",
-    "PostgreSQL & DynamoDB",
-    "Pinecone & ChromaDB",
-    "OpenSearch & FAISS",
-    "AWS (S3, EC2)",
+
+    // Data & Vector Stores
+    "NoSQL",
+    "Vector Databases",
+
+    // Cloud & MLOps
+    "AWS",
     "Docker & CI/CD",
+    "MLflow",
+
+    // ML / Model Training
     "PyTorch & Scikit-learn",
+    "Hugging Face Transformers",
     "PEFT / LoRA / QLoRA",
   ],
 };
@@ -71,17 +84,17 @@ export const experiences = [
     period: "2026",
     role: "Generative AI Engineer",
     company: "Sustainability Economics.ai",
-    location: "Remote / Hybrid",
+    location: "Karnataka, India",
     description: [
-      "Built an LLM-driven Grid Tariff Data Automation platform extracting and standardizing electricity tariff data from utility PDFs across countries using AWS S3 and DynamoDB.",
-      "Implemented automated LLM extraction, evaluation, and Pydantic schema validation with country-specific mapping and unit-conversion logic, cutting manual data-extraction effort by ~80%.",
+        "Built an LLM-driven Grid Tariff Data Automation platform extracting and standardizing electricity tariff data from utility PDFs and websites across countries (AWS S3, DynamoDB), with automated LLM extraction, evaluation, and Pydantic schema validation — including country-specific mapping and unit conversion — cutting manual effort by ~80%.",
+        "Fine-tuned a Gemma 3 4B model using Unsloth on domain-specific electricity tariff data to improve structured tariff extraction and enable efficient, cost-effective inference for product development.",
     ],
   },
   {
     period: "2025 - 2026",
     role: "AI Developer & Data Scientist",
     company: "Cybpress Innovative Solutions",
-    location: "India",
+    location: "Kerala, India",
     description: [
       "Built and deployed agentic AI systems using LangChain and LangGraph enabling multi-step reasoning, tool calling, persistent conversational memory, and production deployment.",
       "Engineered Retrieval-Augmented Generation (RAG) and hybrid search pipelines on OpenSearch/FAISS (BM25 + vector retrieval with reranking), containerized with Docker and optimized for high-performance inference.",
@@ -158,7 +171,7 @@ export const projects = [
     category: "ai",
     description:
       "Architected a constraint-driven BNS-aligned legal reasoning system with persistent memory, checkpointed execution, token streaming, and thread-isolated vector stores to prevent IPC/BNS statutory mixing.",
-    link: "https://github.com/muhammadshahalc",
+    link: "https://www.linkedin.com/posts/muhammad-shahal-c_multi-agent-stateful-legal-reasoning-system-ugcPost-7417513881150967808-dolN/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ6LmwBS_KsJfz1SMqvOaAkwIC5eAl7xJI",
   },
   {
     id: 2,
@@ -168,7 +181,7 @@ export const projects = [
     category: "ai",
     description:
       "Built a RAG medical assistant for precise Q&A over hospital CSVs and PDFs with Hugging Face embeddings, improving response relevance by ~30% in a reusable Flask+Streamlit pipeline.",
-    link: "https://github.com/muhammadshahalc",
+    link: "https://www.linkedin.com/posts/muhammad-shahal-c_ai-healthcare-chatbot-ugcPost-7363614339037081600-OoDG/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ6LmwBS_KsJfz1SMqvOaAkwIC5eAl7xJI",
   },
   {
     id: 3,
@@ -178,7 +191,7 @@ export const projects = [
     category: "fullstack",
     description:
       "Developed a full-stack parsing and assessment system extracting key candidate data with NLP-backed job alignment scoring algorithms for instant insights.",
-    link: "https://github.com/muhammadshahalc",
+    link: "https://github.com/muhammadshahalc/resume-parser-ai",
   },
   {
     id: 4,

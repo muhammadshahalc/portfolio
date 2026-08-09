@@ -23,9 +23,10 @@ export default function Contact() {
       return;
     }
 
-    // TODO: wire this up to a real backend or a service like Formspree/EmailJS.
-    // For now this just simulates a successful send.
-    console.log("Contact form submitted:", form);
+    // Open the user's email client with pre-filled fields
+    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+    const mailtoUrl = `mailto:${personal.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoUrl, "_blank");
     setStatus("success");
     setForm(initialForm);
   };
@@ -57,7 +58,7 @@ export default function Contact() {
                 </div>
                 <div className="contact-text">
                   <h4>Email</h4>
-                  <p>{personal.email}</p>
+                  <p><a href={`mailto:${personal.email}`} style={{ color: "inherit", textDecoration: "none" }}>{personal.email}</a></p>
                 </div>
               </div>
               <div className="contact-item">
@@ -66,7 +67,7 @@ export default function Contact() {
                 </div>
                 <div className="contact-text">
                   <h4>Phone</h4>
-                  <p>{personal.phone}</p>
+                  <p><a href={`tel:${personal.phone}`} style={{ color: "inherit", textDecoration: "none" }}>{personal.phone}</a></p>
                 </div>
               </div>
             </div>
@@ -134,7 +135,7 @@ export default function Contact() {
                 Send Message <FaPaperPlane />
               </button>
               {status === "success" && (
-                <p style={{ color: "var(--secondary)", marginTop: "1rem" }}>
+                <p style={{ color: "var(--primary)", marginTop: "1rem" }}>
                   Thanks for reaching out! I'll get back to you soon.
                 </p>
               )}
