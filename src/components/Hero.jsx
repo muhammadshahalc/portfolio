@@ -63,6 +63,15 @@ export default function Hero() {
             <a href="#portfolio" className="btn btn-primary">
               View My Work <FaArrowRight />
             </a>
+            <a
+              href={personal.resumeUrl}
+              download="Muhammad_Shahal_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline"
+            >
+              Download Resume
+            </a>
             <a href="#contact" className="btn btn-outline">
               Contact Me
             </a>

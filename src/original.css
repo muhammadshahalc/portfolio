@@ -578,16 +578,17 @@
         .service-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #8A2BE2, #FF00FF);
-            color: white;
-            border-radius: 20px;
+            background: rgba(138, 43, 226, 0.15);
+            color: #d8b4fe;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             transition: var(--transition);
-            box-shadow: var(--glow);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.2);
+            border: 1px solid rgba(138, 43, 226, 0.3);
         }
 
         .service-card:hover .service-icon {
@@ -709,48 +710,76 @@
             transform: scale(1.1);
         }
 
+        .portfolio-content {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .portfolio-item:hover .portfolio-content {
+            opacity: 0;
+            transform: scale(0.92);
+        }
+
         .portfolio-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to top, rgba(15, 15, 26, 0.9), transparent);
+            background: #0d0d1a;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: space-between;
             padding: 2rem;
             opacity: 0;
-            transition: var(--transition);
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+            border-radius: 20px;
+            box-sizing: border-box;
+            border: 1px solid rgba(138, 43, 226, 0.4);
+            z-index: 10;
         }
 
         .portfolio-item:hover .portfolio-overlay {
             opacity: 1;
+            transform: translateY(0);
         }
 
         .portfolio-title {
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            color: #ffffff;
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
         }
 
         .portfolio-category {
-            color: var(--secondary);
+            color: #e2e8f0;
             font-size: 0.9rem;
-            margin-bottom: 1rem;
+            line-height: 1.55;
+            margin-bottom: 1.25rem;
+            opacity: 0.9;
         }
 
         .portfolio-link {
             display: inline-flex;
             align-items: center;
-            color: white;
+            justify-content: center;
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 0.65rem 1.25rem;
+            border-radius: 30px;
             font-weight: 600;
+            font-size: 0.9rem;
             gap: 0.5rem;
-            transition: var(--transition);
+            transition: all 0.3s ease;
+            width: fit-content;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
         }
 
         .portfolio-link:hover {
-            color: var(--secondary);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.5);
             gap: 0.75rem;
         }
 
@@ -1485,29 +1514,39 @@
             }
         }
 
-        /* Custom Styles for Portfolio Items */
+        /* Custom Styles for Portfolio Items - Exact Gradients from portfolio_colour */
+        .portfolio-item {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            height: 300px;
+            border: 1px solid rgba(138, 43, 226, 0.1);
+        }
+
         .portfolio-item-1 {
             background: linear-gradient(135deg, #8A2BE2, #4B0082);
         }
 
         .portfolio-item-2 {
-            background: linear-gradient(135deg, #00FFFF, #1E90FF);
+           background: linear-gradient(135deg, #8A2BE2, #4169E1);   /* Your original cyan/blue */
         }
 
         .portfolio-item-3 {
-            background: linear-gradient(135deg, #FF00FF, #8A2BE2);
+            background: linear-gradient(135deg, #C026D3, #8A2BE2);
         }
 
         .portfolio-item-4 {
-            background: linear-gradient(135deg, #8B5CF6, #6366F1);
+            background: linear-gradient(135deg, #8A2BE2, #4B0082);
         }
 
         .portfolio-item-5 {
-            background: linear-gradient(135deg, #EC4899, #8B5CF6);
+           background: linear-gradient(135deg, #8A2BE2, #4169E1);   /* Your original cyan/blue */
         }
 
         .portfolio-item-6 {
-            background: linear-gradient(135deg, #10B981, #3B82F6);
+            background: linear-gradient(135deg, #C026D3, #8A2BE2);
         }
 
         .portfolio-content {
