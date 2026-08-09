@@ -11,8 +11,8 @@ export const personal = {
     "Muhammad Shahal",
     "Full-Stack AI/ML Engineer",
     "Data Scientist",
-    "GenAI & LLM Systems Developer",
     "Agentic AI & RAG Specialist",
+    "GenAI & LLM Systems Developer",
   ],
   heroSubtitle:
     "Full-stack AI/ML Engineer specializing in production-grade GenAI, LLM applications, RAG pipelines, and multi-agent systems. I build reliable, scalable end-to-end AI software — from vector architecture to cloud deployment.",

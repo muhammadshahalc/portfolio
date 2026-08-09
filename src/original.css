@@ -329,6 +329,7 @@
             font-size: 3.5rem;
             margin-bottom: 1rem;
             line-height: 1.2;
+            min-height: 12.6rem;
         }
 
         .hero-title span:first-child {
