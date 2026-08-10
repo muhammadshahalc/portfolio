@@ -69,21 +69,6 @@ export const about = {
   ],
 };
 
-export const skillCategories = [
-  {
-    title: "Generative AI & LLMs",
-    skills: ["LangChain", "LangGraph", "RAG", "Agentic AI", "Prompt Engineering", "OpenAI SDK", "LLaMA 3", "Pinecone", "FAISS", "ChromaDB", "OpenSearch", "Embeddings", "Hybrid & BM25 Search"],
-  },
-  {
-    title: "Backend & Frontend",
-    skills: ["Python", "SQL (PostgreSQL / MySQL)", "FastAPI", "Flask", "React", "RESTful APIs", "DynamoDB", "AWS S3", "System Design"],
-  },
-  {
-    title: "Machine Learning & MLOps",
-    skills: ["PyTorch", "TensorFlow", "Scikit-learn", "XGBoost", "Hugging Face", "NLP", "PEFT / LoRA / QLoRA", "AWS", "Docker", "GitHub Actions CI/CD", "MLflow", "DVC", "Airflow"],
-  },
-];
-
 export const skillsData = {
   tag: "<SKILLS/>",
   title: "What I work with",
@@ -96,12 +81,12 @@ export const skillsData = {
     {
       title: "AI & Generative AI",
       icon: "FaBrain",
-      skills: ["LangChain", "LangGraph", "RAG & Hybrid Search", "Agentic AI", "Prompt Engineering", "OpenAI SDK"],
+      skills: ["LangChain", "LangGraph", "NLP","RAG & Hybrid Search", "Agentic AI", "Prompt Engineering", "OpenAI SDK"],
     },
     {
       title: "Machine Learning & MLOps",
       icon: "FaMicrochip",
-      skills: ["PyTorch", "TensorFlow", "Scikit-learn", "Hugging Face", "PEFT / LoRA / QLoRA", "MLflow", "Unsloth"],
+      skills: ["PyTorch", "TensorFlow", "Scikit-learn", "Fine-Tuning","Hugging Face", "PEFT / LoRA / QLoRA", "MLflow", "XGBoost"],
     },
     {
       title: "Backend & Frontend",
@@ -116,7 +101,7 @@ export const skillsData = {
     {
       title: "Tools & Cloud Infrastructure",
       icon: "FaTools",
-      skills: ["AWS", "Azure", "Docker", "Git", "GitHub", "Linux", "Postman", "CI/CD"],
+      skills: ["AWS", "Azure", "Docker", "Git", "GitHub", "Linux", "Postman", "Airflow", "CI/CD"],
     },
   ],
 };
