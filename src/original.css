@@ -1622,11 +1622,24 @@
                 flex-direction: column;
                 gap: 3rem;
             }
+
+            .hero-social {
+                justify-content: center;
+                margin-bottom: 4rem;
+            }
+
+            .scroll-indicator {
+                bottom: 12px;
+            }
         }
 
         @media (max-width: 576px) {
             .container {
                 padding: 0 1rem;
+            }
+
+            .hero {
+                padding-bottom: 5rem;
             }
 
             .section-title {
@@ -1654,6 +1667,15 @@
 
             .hero-cta .btn {
                 width: 100%;
+            }
+
+            .hero-social {
+                justify-content: center;
+                margin-bottom: 4.5rem;
+            }
+
+            .scroll-indicator {
+                bottom: 10px;
             }
 
             .experience-badge {
