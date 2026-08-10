@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
  *
  * Usage: <FadeIn type="fade-up"><h2>Heading</h2></FadeIn>
  */
-export default function FadeIn({ type = "fade-up", className = "", children, as: Tag = "div" }) {
+export default function FadeIn({ type = "fade-up", className = "", children, as: Tag = "div", style, ...props }) {
   const ref = useRef(null);
   const [active, setActive] = useState(false);
 
@@ -29,7 +29,7 @@ export default function FadeIn({ type = "fade-up", className = "", children, as:
   }, []);
 
   return (
-    <Tag ref={ref} className={`${type} ${active ? "active" : ""} ${className}`}>
+    <Tag ref={ref} className={`${type} ${active ? "active" : ""} ${className}`} style={style} {...props}>
       {children}
     </Tag>
   );

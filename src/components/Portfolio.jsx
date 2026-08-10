@@ -58,61 +58,56 @@ export default function Portfolio() {
           {visibleProjects.map((project, index) => {
             const Icon = iconMap[project.icon] || FaCode;
             const bgClass = `portfolio-item-${(index % 6) + 1}`;
-            const isLLMGridCard = project.name.includes("LLM Grid Tariff");
 
             return (
-              <div key={project.id} style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-                <FadeIn type="fade-up" className={`portfolio-item ${bgClass}`}>
-                  <div className="portfolio-content">
-                    <Icon className="portfolio-icon" />
-                    <h3 className="portfolio-name">{project.name}</h3>
-                    <div className="portfolio-tags">
-                      {project.tech.split(",").map((techItem, i) => (
-                        <span key={i} className="tag-pill">
-                          {techItem.trim()}
-                        </span>
-                      ))}
-                    </div>
+              <FadeIn key={project.id} type="fade-up" className={`portfolio-item ${bgClass}`}>
+                <div className="portfolio-content">
+                  <Icon className="portfolio-icon" />
+                  <h3 className="portfolio-name">{project.name}</h3>
+                  <div className="portfolio-tags">
+                    {project.tech.split(",").map((techItem, i) => (
+                      <span key={i} className="tag-pill">
+                        {techItem.trim()}
+                      </span>
+                    ))}
                   </div>
-                  <div className="portfolio-overlay">
-                    <h3 className="portfolio-title">{project.name}</h3>
-                    <p className="portfolio-category">{project.description}</p>
-                    <div className="portfolio-tags">
-                      {project.tech.split(",").map((techItem, i) => (
-                        <span key={i} className="tag-pill">
-                          {techItem.trim()}
-                        </span>
-                      ))}
-                    </div>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="portfolio-link"
-                    >
-                      View Project <FaArrowRight />
-                    </a>
+                </div>
+                <div className="portfolio-overlay">
+                  <h3 className="portfolio-title">{project.name}</h3>
+                  <p className="portfolio-category">{project.description}</p>
+                  <div className="portfolio-tags">
+                    {project.tech.split(",").map((techItem, i) => (
+                      <span key={i} className="tag-pill">
+                        {techItem.trim()}
+                      </span>
+                    ))}
                   </div>
-                </FadeIn>
-
-                {isLLMGridCard && (
-                  <FadeIn type="fade-up">
-                    <a
-                      href={personal.resumeUrl}
-                      download="Muhammad_Shahal_Resume.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-primary"
-                      style={{ width: "100%", justifyContent: "center", boxSizing: "border-box" }}
-                    >
-                      Download Resume <FaDownload />
-                    </a>
-                  </FadeIn>
-                )}
-              </div>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="portfolio-link"
+                  >
+                    View Project <FaArrowRight />
+                  </a>
+                </div>
+              </FadeIn>
             );
           })}
         </div>
+
+        <FadeIn type="fade-up" className="portfolio-cta">
+          <a
+            href={personal.resumeUrl}
+            download="Muhammad_Shahal_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+            style={{ padding: "0.85rem 2rem", fontSize: "1rem" }}
+          >
+            Download Resume <FaDownload />
+          </a>
+        </FadeIn>
       </div>
     </section>
   );
