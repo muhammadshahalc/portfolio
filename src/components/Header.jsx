@@ -5,9 +5,10 @@ import { personal } from "../data/content";
 const navItems = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
   { href: "#services", label: "Services" },
-  { href: "#portfolio", label: "Portfolio" },
+  { href: "#portfolio", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -40,8 +41,10 @@ export default function Header() {
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="container header-container">
         <a href="#home" className="logo">
-          {personal.logoFirst}
-          <span>{personal.logoSecond}</span>
+          <span className="logo-bracket">&lt;</span>
+          <span className="logo-brand">{personal.logoFirst}</span>
+          <span className="logo-accent">{personal.logoSecond}</span>
+          <span className="logo-bracket logo-bracket-accent">/&gt;</span>
         </a>
         <button
           className="mobile-toggle"

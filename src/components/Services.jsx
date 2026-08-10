@@ -7,7 +7,7 @@ import {
   FaCogs,
   FaCode,
 } from "react-icons/fa";
-import { services } from "../data/content";
+import { services, sectionTags } from "../data/content";
 import FadeIn from "./FadeIn";
 
 // Explicit icon map keeps the bundle small — avoids importing the entire
@@ -18,8 +18,9 @@ export default function Services() {
   return (
     <section className="services section" id="services">
       <div className="container">
-        <FadeIn as="h2" className="section-title">
-          What I Do
+        <FadeIn type="fade-up">
+          <span className="section-tag">{sectionTags.services}</span>
+          <h2 className="section-title">What I Do</h2>
         </FadeIn>
         <FadeIn as="p" className="section-subtitle">
           Specialized AI/ML engineering services, from prototype to production

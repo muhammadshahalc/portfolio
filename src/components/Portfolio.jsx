@@ -4,16 +4,25 @@ import {
   FaSearch,
   FaLayerGroup,
   FaSlidersH,
+  FaChartLine,
+  FaFilm,
   FaCode,
   FaArrowRight,
   FaDownload,
 } from "react-icons/fa";
-import { projects, filters, personal } from "../data/content";
+import { projects, filters, personal, sectionTags } from "../data/content";
 import FadeIn from "./FadeIn";
 
 // Explicit icon map keeps the bundle small — avoids importing the entire
 // react-icons/fa set with `import * as Icons`.
-const iconMap = { FaComments, FaSearch, FaLayerGroup, FaSlidersH };
+const iconMap = {
+  FaComments,
+  FaSearch,
+  FaLayerGroup,
+  FaSlidersH,
+  FaChartLine,
+  FaFilm,
+};
 
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -25,8 +34,9 @@ export default function Portfolio() {
   return (
     <section className="portfolio section" id="portfolio">
       <div className="container">
-        <FadeIn as="h2" className="section-title">
-          My Work
+        <FadeIn type="fade-up">
+          <span className="section-tag">{sectionTags.projects}</span>
+          <h2 className="section-title">My Work</h2>
         </FadeIn>
         <FadeIn as="p" className="section-subtitle">
           A selection of AI/ML projects — RAG pipelines, agent systems, and full-stack LLM apps
@@ -56,11 +66,24 @@ export default function Portfolio() {
                   <div className="portfolio-content">
                     <Icon className="portfolio-icon" />
                     <h3 className="portfolio-name">{project.name}</h3>
-                    <p className="portfolio-tech">{project.tech}</p>
+                    <div className="portfolio-tags">
+                      {project.tech.split(",").map((techItem, i) => (
+                        <span key={i} className="tag-pill">
+                          {techItem.trim()}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                   <div className="portfolio-overlay">
                     <h3 className="portfolio-title">{project.name}</h3>
                     <p className="portfolio-category">{project.description}</p>
+                    <div className="portfolio-tags">
+                      {project.tech.split(",").map((techItem, i) => (
+                        <span key={i} className="tag-pill">
+                          {techItem.trim()}
+                        </span>
+                      ))}
+                    </div>
                     <a
                       href={project.link}
                       target="_blank"

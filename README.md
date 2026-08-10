@@ -35,14 +35,24 @@ unless you want to change layout or add a new section.
 1. `src/data/content.js` — replace placeholder email, phone, social links,
    resume URL, and especially the **projects array** with your real projects
    and real, defensible numbers.
-2. Contact form currently only logs to console (see `Contact.jsx`) — wire it
-   to a real backend or a service like Formspree / EmailJS before relying on it.
-3. Add a real favicon (`public/favicon.svg`).
-4. Consider adding an actual resume PDF and linking `personal.resumeUrl` to it.
+## Database & Contact Form Setup
+
+1. **Environment Variables**: Add your Aiven PostgreSQL connection URL to `.env`:
+   ```env
+   DATABASE_URL=postgres://user:password@host:port/defaultdb?sslmode=require
+   ```
+2. **Initialize Database Table**: Run the setup script once before first use:
+   ```bash
+   npm run db:init
+   ```
+3. **Vercel Deployment**:
+   - Go to project **Settings** -> **Environment Variables** in Vercel.
+   - Add `DATABASE_URL` with your Aiven Postgres connection string.
+   - Vercel automatically deploys `api/contact.js` as a serverless function!
 
 ## Deploying to Vercel
 
 1. Push this project to a GitHub repo.
 2. Go to vercel.com → New Project → import the repo.
 3. Vercel auto-detects Vite — no config needed. Click Deploy.
-4. Free Hobby plan covers this easily (personal, non-commercial site).
+4. Add your `DATABASE_URL` under **Settings -> Environment Variables**.

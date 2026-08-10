@@ -28,12 +28,17 @@ export const personal = {
 };
 
 export const about = {
+  tag: "<ABOUT/>",
+  title: "Who I am",
   paragraphs: [
     "I'm a Full-stack AI/ML Engineer focused on turning Large Language Models (LLMs) and Generative AI into robust, production-ready systems. My expertise centers on Retrieval-Augmented Generation (RAG) pipelines, multi-agent orchestration, schema-validated automated extraction, and scalable backend integrations.",
     "I work across the full stack of modern LLM and AI engineering: building multi-agent workflows with LangGraph and LangChain, architecting hybrid vector search systems (Pinecone, FAISS, ChromaDB, OpenSearch), building high-performance FastAPI & React applications, and deploying containerized cloud solutions on AWS & Docker.",
   ],
   yearsLabel: "AI/ML",       // shown in the "experience badge" circle
   yearsSubLabel: "Engineer",
+  location: "Kerala, India",
+  focus: "Full-Stack AI/ML Engineering, Backend, Data Science",
+  status: "Available for opportunities",
   skills: [
     // GenAI / LLM
     "Python",
@@ -78,6 +83,44 @@ export const skillCategories = [
     skills: ["PyTorch", "TensorFlow", "Scikit-learn", "XGBoost", "Hugging Face", "NLP", "PEFT / LoRA / QLoRA", "AWS", "Docker", "GitHub Actions CI/CD", "MLflow", "DVC", "Airflow"],
   },
 ];
+
+export const skillsData = {
+  tag: "<SKILLS/>",
+  title: "What I work with",
+  categories: [
+    {
+      title: "Programming",
+      icon: "FaCode",
+      skills: ["Python", "SQL", "JavaScript", "HTML5"],
+    },
+    {
+      title: "AI & Generative AI",
+      icon: "FaBrain",
+      skills: ["LangChain", "LangGraph", "RAG & Hybrid Search", "Agentic AI", "Prompt Engineering", "OpenAI SDK"],
+    },
+    {
+      title: "Machine Learning & MLOps",
+      icon: "FaMicrochip",
+      skills: ["PyTorch", "TensorFlow", "Scikit-learn", "Hugging Face", "PEFT / LoRA / QLoRA", "MLflow", "Unsloth"],
+    },
+    {
+      title: "Backend & Frontend",
+      icon: "FaServer",
+      skills: ["FastAPI", "Flask", "REST APIs", "React", "SQLAlchemy", "System Design"],
+    },
+    {
+      title: "Database & Vector Stores",
+      icon: "FaDatabase",
+      skills: ["PostgreSQL", "MySQL", "SQLite", "DynamoDB", "Pinecone", "FAISS", "ChromaDB", "OpenSearch"],
+    },
+    {
+      title: "Tools & Cloud Infrastructure",
+      icon: "FaTools",
+      skills: ["AWS", "Azure", "Docker", "Git", "GitHub", "Linux", "Postman", "CI/CD"],
+    },
+  ],
+};
+
 
 export const experiences = [
   {
@@ -203,11 +246,32 @@ export const projects = [
       "Automated extraction and standardization platform processing electricity tariff utility PDFs across countries, reducing manual extraction effort by ~80%.",
     link: "https://github.com/muhammadshahalc",
   },
+  {
+    id: 5,
+    icon: "FaChartLine",
+    name: "House Price Prediction",
+    tech: "Preprocessing, Visualization, Ensemble Models, Scikit-learn",
+    category: "datascience",
+    description:
+      "Random Forest model predicting house prices across 21 Indian cities, trained on 180,000+ listings. Benchmarked against Linear Regression, XGBoost, and LightGBM. Deployed as a Streamlit app (R²: 0.87).",
+    link: "https://www.linkedin.com/posts/muhammad-shahal-c_housepriceprediction-realestate-proptech-ugcPost-7364985387192127489-0Z86/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ6LmwBS_KsJfz1SMqvOaAkwIC5eAl7xJI",
+  },
+  {
+    id: 6,
+    icon: "FaFilm",
+    name: "Movie Recommendation system",
+    tech: "NLP, Cosine Similarity, Scikit-learn, TMDB API",
+    category: "datascience",
+    description:
+      "Content-based movie recommender using NLP feature engineering and Bag-of-Words vectorization with cosine similarity. Returns the top 5 similar titles via a Streamlit app with precomputed similarity vectors.",
+    link: "https://github.com/muhammadshahalc/movie-recommendation-system",
+  },
 ];
 
 export const filters = [
   { label: "All", value: "all" },
   { label: "AI / GenAI", value: "ai" },
+  { label: "Data Science", value: "datascience" },
   { label: "Full-Stack", value: "fullstack" },
 ];
 
@@ -218,3 +282,11 @@ export const footer = {
     "Building production-grade AI & GenAI systems — RAG pipelines, agentic AI, and scalable full-stack applications.",
   copyrightName: "Muhammad Shahal",
 };
+
+export const sectionTags = {
+  journey: "<JOURNEY/>",
+  services: "<SERVICES/>",
+  projects: "<PROJECTS/>",
+  contact: "<CONTACT/>",
+};
+

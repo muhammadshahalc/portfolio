@@ -1,13 +1,14 @@
 import { FaBriefcase, FaGraduationCap, FaCertificate } from "react-icons/fa";
-import { experiences, education } from "../data/content";
+import { experiences, education, sectionTags } from "../data/content";
 import FadeIn from "./FadeIn";
 
 export default function Experience() {
   return (
     <section className="experience section" id="experience">
       <div className="container">
-        <FadeIn as="h2" className="section-title">
-          Experience & Education
+        <FadeIn type="fade-up">
+          <span className="section-tag">{sectionTags.journey}</span>
+          <h2 className="section-title">Experience & Education</h2>
         </FadeIn>
         <FadeIn as="p" className="section-subtitle">
           My professional timeline as an AI/ML Engineer and academic background

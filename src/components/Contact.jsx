@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaPaperPlane } from "react-icons/fa";
-import { personal } from "../data/content";
+import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaPaperPlane, FaSpinner } from "react-icons/fa";
+import { personal, sectionTags } from "../data/content";
 import SocialLinks from "./SocialLinks";
 import FadeIn from "./FadeIn";
 
@@ -9,33 +9,63 @@ const initialForm = { name: "", email: "", subject: "", message: "" };
 export default function Contact() {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState(null); // null | "success" | "error"
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, subject, message } = form;
 
     if (!name || !email || !subject || !message) {
       setStatus("error");
+      setErrorMessage("Please fill in all fields.");
       return;
     }
 
-    // Open the user's email client with pre-filled fields
-    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-    const mailtoUrl = `mailto:${personal.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.open(mailtoUrl, "_blank");
-    setStatus("success");
-    setForm(initialForm);
+    setIsSubmitting(true);
+    setStatus(null);
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      let data;
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        data = await response.json();
+      } else {
+        throw new Error("API route unavailable locally. Please run 'npm run dev' with Vite dev middleware or deploy to Vercel.");
+      }
+
+      if (response.ok && data.success) {
+        setStatus("success");
+        setForm(initialForm);
+      } else {
+        throw new Error(data.error || "Failed to send message.");
+      }
+    } catch (err) {
+      console.error("Contact form error:", err);
+      setStatus("error");
+      setErrorMessage(err.message || "Failed to submit form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section className="contact section" id="contact">
       <div className="container">
-        <FadeIn as="h2" className="section-title">
-          Get In Touch
+        <FadeIn type="fade-up">
+          <span className="section-tag">{sectionTags.contact}</span>
+          <h2 className="section-title">Get In Touch</h2>
         </FadeIn>
         <FadeIn as="p" className="section-subtitle">
           Open to AI/ML engineering roles — let's talk
@@ -131,17 +161,21 @@ export default function Contact() {
                   onChange={handleChange}
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
-                Send Message <FaPaperPlane />
+              <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <>Sending... <FaSpinner className="spin" style={{ animation: "spin 1s linear infinite" }} /></>
+                ) : (
+                  <>Send Message <FaPaperPlane /></>
+                )}
               </button>
               {status === "success" && (
                 <p style={{ color: "var(--primary)", marginTop: "1rem" }}>
-                  Thanks for reaching out! I'll get back to you soon.
+                  Thanks for reaching out! Your message has been sent successfully.
                 </p>
               )}
               {status === "error" && (
-                <p style={{ color: "var(--accent)", marginTop: "1rem" }}>
-                  Please fill in all fields.
+                <p style={{ color: "#ef4444", marginTop: "1rem" }}>
+                  {errorMessage || "An error occurred while sending your message."}
                 </p>
               )}
             </form>

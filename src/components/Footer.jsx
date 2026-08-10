@@ -6,7 +6,7 @@ const quickLinks = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
   { href: "#services", label: "Services" },
-  { href: "#portfolio", label: "Portfolio" },
+  { href: "#portfolio", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -17,8 +17,10 @@ export default function Footer() {
         <div className="footer-content">
           <div className="footer-about">
             <a href="#home" className="footer-logo">
-              {personal.logoFirst}
-              <span>{personal.logoSecond}</span>
+              <span className="logo-bracket">&lt;</span>
+              <span className="logo-brand">{personal.logoFirst}</span>
+              <span className="logo-accent">{personal.logoSecond}</span>
+              <span className="logo-bracket logo-bracket-accent">/&gt;</span>
             </a>
             <p className="footer-text">{footer.tagline}</p>
             <SocialLinks className="footer-social" />
