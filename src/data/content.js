@@ -210,7 +210,7 @@ export const projects = [
     id: 1,
     icon: "FaComments",
     name: "Multi-Agent Legal Reasoning System",
-    tech: "LangGraph, FastAPI, ChromaDB, Postgres",
+    tech: "LangGraph, FastAPI, ChromaDB, Postgres, RAG",
     category: "ai",
     description:
       "Architected a constraint-driven BNS-aligned legal reasoning system with persistent memory, checkpointed execution, token streaming, and thread-isolated vector stores to prevent IPC/BNS statutory mixing.",
@@ -230,7 +230,7 @@ export const projects = [
     id: 3,
     icon: "FaLayerGroup",
     name: "Resume Matcher Pro",
-    tech: "FastAPI, React, PostgreSQL, NLP Scoring",
+    tech: "FastAPI, React, PostgreSQL, NLP Scoring, Full Stack",
     category: "fullstack",
     description:
       "Developed a full-stack parsing and assessment system extracting key candidate data with NLP-backed job alignment scoring algorithms for instant insights.",
@@ -240,20 +240,20 @@ export const projects = [
     id: 4,
     icon: "FaSlidersH",
     name: "LLM Grid Tariff Data Automation",
-    tech: "AWS S3, DynamoDB, Pydantic, LLM Extraction",
+    tech: "LLM Extraction, AWS, Pydantic, Fine Tuning, LLM Evaluation",
     category: "ai",
     description:
-      "Automated extraction and standardization platform processing electricity tariff utility PDFs across countries, reducing manual extraction effort by ~80%.",
+      "LLM-driven platform extracting and standardizing electricity tariff data from PDFs and websites, automated on AWS — cutting manual effort by ~80%. Fine-tuned Gemma 3 4B (Unsloth) for cost-efficient extraction.",
     link: "https://github.com/muhammadshahalc",
   },
   {
     id: 5,
     icon: "FaChartLine",
     name: "House Price Prediction",
-    tech: "Preprocessing, Visualization, Ensemble Models, Scikit-learn",
+    tech: "Scikit-learn, XGBoost, LightGBM, Ensemble Models",
     category: "datascience",
     description:
-      "Random Forest model predicting house prices across 21 Indian cities, trained on 180,000+ listings. Benchmarked against Linear Regression, XGBoost, and LightGBM. Deployed as a Streamlit app (R²: 0.87).",
+      "House price prediction model built using Random Forest, covering 21 Indian cities and trained on 180,000+ listings. Benchmarked against Linear Regression, XGBoost, and LightGBM. Deployed as a Streamlit app (R²: 0.87).",
     link: "https://www.linkedin.com/posts/muhammad-shahal-c_housepriceprediction-realestate-proptech-ugcPost-7364985387192127489-0Z86/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ6LmwBS_KsJfz1SMqvOaAkwIC5eAl7xJI",
   },
   {
